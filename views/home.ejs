@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: linear-gradient(to right, #78b1f6, #644dc2);
+      }
+      h1 {
+        text-align: center;
+        color: #b4601c;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+      .container-list {
+        padding: 20px;
+        padding-right: 25px;
+        border: 2px solid black;
+        border-radius: 25px;
+      }
+      .container-list input {
+        text-align: start;
+      }
+      h2 {
+        font-family: "Serif";
+        font-size: 2.3rem;
+        color: #0f0942c4;
+      }
+      form input.Work {
+        width: 100%;
+        height: 25px;
+        padding: 2px;
+        font-family: "Poppins";
+      }
+      input.submit {
+        margin-top: 4px;
+        margin-left: 75%;
+        border: 1px solid;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 4px;
+        font-family: "Poppins";
+        padding-bottom: 4px;
+        transition: 0.2s;
+        background-image: linear-gradient(to right, #78b1f6, #644dc2);
+      }
+      input.submit:hover{
+        background-image: linear-gradient(to right, gray, gray);
+        color: white;
+        border: 1px solid black;
+        font-family: "Poppins";
+      }
+      label{
+        color: rgb(114, 44, 56);
+      }
+      input[type="checkbox"]:checked+label{
+        text-decoration:line-through;
+      }
+      p{
+        font-size: small;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <div class="container">
+      <div class="container-item">
+        <h2><%=currentWeek%>, <%=currentDay%>/<%=currentMonth%></h2>
+        <div class="container-list">
+          <form action="/" method="post">
+            <input type="text" class="Work" name="Work" placeholder="Enter" />
+            <input type="Submit" class="submit" value="Enter" />
+          </form>
+          <ul>
+            <%for(var i=0;i<items.length;i++){%>
+                <input type="checkbox" />
+                <label for="item"><%=items[i]%></label> <br>
+               <% }%>
+          </ul>
+          <p>*Enter Your Work</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
